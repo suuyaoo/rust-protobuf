@@ -307,7 +307,7 @@ pub fn escape(data: &[u8], buf: &mut String) {
 }
 
 pub fn hex_escape(data: &[u8], buf: &mut String) {
-    hex::ToHex::write_hex_upper(&data, buf).unwrap();
+    *buf = hex::encode_upper(&data);
 }
 
 pub fn redact_bytes(data: &[u8], buf: &mut String) {
